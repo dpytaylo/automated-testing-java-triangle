@@ -6,20 +6,24 @@ public class Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
 
-        System.out.print("Enter a: ");
-        var a = scanner.nextDouble();
+        try {
+            System.out.print("Enter a: ");
+            var a = scanner.nextDouble();
 
-        System.out.print("Enter b: ");
-        var b = scanner.nextDouble();
+            System.out.print("Enter b: ");
+            var b = scanner.nextDouble();
 
-        System.out.print("Enter c: ");
-        var c = scanner.nextDouble();
+            System.out.print("Enter c: ");
+            var c = scanner.nextDouble();
 
-        checkTriangle(a, b, c);
+            checkTriangle(a, b, c);
+        } catch(Exception e) {
+            System.out.println("Треугольник не существует");
+        }
     }
 
     static void checkTriangle(double a, double b, double c) {
-        if (a + b <= c || a + c <= b || b + c <= a) {
+        if (a < 0 || b < 0 || c < 0 || a + b <= c || a + c <= b || b + c <= a) {
             System.out.println("Треугольник не существует");
             return;
         }
