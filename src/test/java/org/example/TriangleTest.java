@@ -19,7 +19,7 @@ class TriangleTest {
 
     @ParameterizedTest
     @MethodSource("provideNonExistentTriangles")
-    void checkNonExistentTriangles(int[] sides) {
+    void checkNonExistentTrianglesTest(int[] sides) {
         assertEquals(TriangleKind.NON_EXISTENT, Triangle.check(sides[0], sides[1], sides[2]));
     }
 
@@ -32,7 +32,7 @@ class TriangleTest {
 
     @ParameterizedTest
     @MethodSource("provideEquilateralTriangles")
-    void checkEquilateralTriangles(int[] sides) {
+    void checkEquilateralTrianglesTest(int[] sides) {
         assertEquals(TriangleKind.EQUILATERAL, Triangle.check(sides[0], sides[1], sides[2]));
     }
 
@@ -45,7 +45,7 @@ class TriangleTest {
 
     @ParameterizedTest
     @MethodSource("provideIsoscelesTriangles")
-    void checkIsoscelesTriangles(int[] sides) {
+    void checkIsoscelesTrianglesTest(int[] sides) {
         assertEquals(TriangleKind.ISOSCELES, Triangle.check(sides[0], sides[1], sides[2]));
     }
 
@@ -58,7 +58,7 @@ class TriangleTest {
 
     @ParameterizedTest
     @MethodSource("provideScaleneTriangles")
-    void checkScaleneTriangles(int[] sides) {
+    void checkScaleneTrianglesTest(int[] sides) {
         assertEquals(TriangleKind.SCALENE, Triangle.check(sides[0], sides[1], sides[2]));
     }
 }
